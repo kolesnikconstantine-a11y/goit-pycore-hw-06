@@ -39,11 +39,9 @@ class Record:
     def edit_phone(self, old_phone, new_phone):
          for p in self.phones:
             if p.value == old_phone:
-                 # ??? can't find index ???
-                 #index = self.phones.index(p.value)
-                 index = 0
+                 index = self.phones.index(p)
                  self.phones[index] = Phone(new_phone)
-    
+                 
     # пошуку об'єктів Phone — find_phone.      
     def find_phone(self, phone):
           for p in self.phones:
