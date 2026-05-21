@@ -20,7 +20,7 @@ class Phone(Field):
              if len(value) == 10:
                   self.value = value
              else:
-                  raise Exception("Phone must be 10 digits")
+                  raise Exception("Phone must be 10 digits only")
 
 # Клас для зберігання інформації про контакт, включно з іменем та списком телефонів.
 class Record:
@@ -89,7 +89,7 @@ book.add_record(jane_record)
 # Виведення всіх записів у книзі
 for name, record in book.data.items():
     print(record)
-    
+
 # Знаходження та редагування телефону для John
 john = book.find("John")
 john.edit_phone("1234567890", "1112223333")
