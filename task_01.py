@@ -50,7 +50,10 @@ class Record:
     
     # видалення — remove_phone
     def remove_phone(self, phone):
-          self.phones.remove(Phone(phone)) 
+          for p in self.phones:
+               if p.value == phone:
+                     self.phones.remove(p)
+           
     
 # AddressBook: Клас для зберігання записів та керування ними.
 class AddressBook(UserDict):
@@ -100,3 +103,6 @@ print(f"{john.name}: {found_phone}")  # Виведення: John: 5555555555
 
 # Видалення запису Jane
 book.delete("Jane")
+john.remove_phone("5555555555")
+
+
